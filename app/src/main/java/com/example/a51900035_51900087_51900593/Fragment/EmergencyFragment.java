@@ -1,5 +1,7 @@
 package com.example.a51900035_51900087_51900593.Fragment;
 
+import android.content.Intent;
+import android.location.Location;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,15 +9,16 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.a51900035_51900087_51900593.Activity.DriverActivity;
+import com.example.a51900035_51900087_51900593.Activity.EmergencyActivity;
 import com.example.a51900035_51900087_51900593.R;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link EmergencyFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class EmergencyFragment extends Fragment {
+
+    TextView tvEmergency, tvDriver;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -30,15 +33,6 @@ public class EmergencyFragment extends Fragment {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment EmergencyFragment.
-     */
-    // TODO: Rename and change types and number of parameters
     public static EmergencyFragment newInstance(String param1, String param2) {
         EmergencyFragment fragment = new EmergencyFragment();
         Bundle args = new Bundle();
@@ -61,6 +55,26 @@ public class EmergencyFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_emergency, container, false);
+        View view = inflater.inflate(R.layout.fragment_emergency, container, false);
+
+        tvEmergency = (TextView) view.findViewById(R.id.tvEmergency);
+        tvDriver = (TextView) view.findViewById(R.id.tvDriver);
+
+        tvEmergency.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getActivity(), EmergencyActivity.class);
+                startActivity(i);
+            }
+        });
+
+        tvDriver.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getActivity(), DriverActivity.class);
+                startActivity(i);
+            }
+        });
+        return view;
     }
 }

@@ -10,6 +10,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.51900035_51900087_51900593">
         <activity
+            android:name=".Activity.EmergencyActivity"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name=".Activity.DriverActivity"
+            android:exported="true">
+        </activity>
+        <activity
             android:name=".Activity.SplashActivity"
             android:exported="true">
             <intent-filter>
@@ -20,8 +28,7 @@
         </activity>
         <activity
             android:name=".Activity.MainActivity"
-            android:exported="true">
-        </activity>
+            android:exported="true" />
     </application>
 
 </manifest>
