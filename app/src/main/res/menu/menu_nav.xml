@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/nav_home"
+            android:title="Manage"
+            android:icon="@drawable/ic_baseline_home_24">
+        </item>
+    </group>
+
+    <item android:title="@string/nav_account">
+        <menu>
+            <item android:id="@+id/nav_my_profile"
+                android:title="@string/nav_profile"
+                android:icon="@drawable/ic_baseline_person_24">
+            </item>
+            <item android:id="@+id/nav_nofications"
+                android:title="@string/nav_nofications"
+                android:icon="@drawable/ic_edit_black_24dp">
+            </item>
+            <item android:id="@+id/nav_history"
+                android:title="@string/nav_history"
+                android:icon="@drawable/ic_baseline_history_24">
+            </item>
+            <item android:id="@+id/nav_emergency"
+                android:title="@string/nav_emergency"
+                android:icon="@drawable/ic_baseline_accessibility_24">
+            </item>
+            <item android:id="@+id/nav_sign_out"
+                android:title="@string/nav_sign_out"
+                android:icon="@drawable/ic_baseline_login_24">
+            </item>
+
+        </menu>
+    </item>
+</menu>

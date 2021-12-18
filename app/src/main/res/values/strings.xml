@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">51900087_DemoQT2</string>
+    <string name="nav_home">Home</string>
+    <string name="nav_favorite">Product</string>
+    <string name="nav_history">History</string>
+    <string name="nav_account">Account</string>
+    <string name="nav_profile">My Profile</string>
+    <string name="navigation_drawer_open">Open Navigation Drawer</string>
+    <string name="navigation_drawer_close">Close Navigation Drawer</string>
+    <string name="nav_sign_out">Sign Out</string>
+    <string name="nav_emergency">Emergency</string>
+    <string name="nav_nofications">Nofications</string>
+    <string name="textview">TextView</string>
+    <string name="todo">TODO</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
