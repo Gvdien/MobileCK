@@ -15,7 +15,6 @@
         android:padding="10dp">
 
         <ImageView
-            android:id="@+id/ivImg"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:src="@drawable/male"/>
@@ -27,7 +26,6 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/tvName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
@@ -37,7 +35,6 @@
                 android:textStyle="bold"></TextView>
 
             <TextView
-                android:id="@+id/tvSex"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -47,7 +44,6 @@
             </TextView>
 
             <TextView
-                android:id="@+id/tvCode"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -57,7 +53,6 @@
         </LinearLayout>
 
         <TextView
-            android:id="@+id/tvGrade"
             android:layout_width="wrap_content"
             android:layout_height="80dp"
             android:layout_weight="1"
@@ -80,7 +75,6 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:id="@+id/ivCall"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -94,7 +88,6 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:id="@+id/ivMessage"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
