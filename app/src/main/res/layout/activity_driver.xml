@@ -7,7 +7,7 @@
     android:orientation="vertical"
     tools:context=".Activity.EmergencyActivity">
 
-    <?xml version="1.0" encoding="utf-8"?>
+
     <LinearLayout
 
         android:layout_width="match_parent"
