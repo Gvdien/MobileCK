@@ -5,19 +5,33 @@
       <map>
         <entry key="..\:/STD/Mobile Develop/CK/MobileCK/app/src/main/res/drawable/corner_bg.xml" value="0.25277777777777777" />
         <entry key="..\:/STD/Mobile Develop/CK/MobileCK/app/src/main/res/drawable/corner_bg_driver.xml" value="0.25277777777777777" />
+        <entry key="..\:/STD/Mobile Develop/CK/MobileCK/app/src/main/res/layout/activity_add_doxang.xml" value="0.14583333333333334" />
+        <entry key="..\:/STD/Mobile Develop/CK/MobileCK/app/src/main/res/layout/activity_add_suachua.xml" value="0.14583333333333334" />
+        <entry key="..\:/STD/Mobile Develop/CK/MobileCK/app/src/main/res/layout/activity_add_thaynhot.xml" value="0.14583333333333334" />
         <entry key="..\:/STD/Mobile Develop/CK/MobileCK/app/src/main/res/layout/activity_driver.xml" value="0.264" />
         <entry key="..\:/STD/Mobile Develop/CK/MobileCK/app/src/main/res/layout/activity_emergency.xml" value="0.264" />
+        <entry key="..\:/STD/Mobile Develop/CK/MobileCK/app/src/main/res/layout/activity_list_lichsu.xml" value="0.14583333333333334" />
         <entry key="..\:/STD/Mobile Develop/CK/MobileCK/app/src/main/res/layout/activity_login.xml" value="0.15307971014492755" />
         <entry key="..\:/STD/Mobile Develop/CK/MobileCK/app/src/main/res/layout/activity_main.xml" value="0.15307971014492755" />
         <entry key="..\:/STD/Mobile Develop/CK/MobileCK/app/src/main/res/layout/activity_splash.xml" value="0.264" />
+        <entry key="..\:/STD/Mobile Develop/CK/MobileCK/app/src/main/res/layout/activity_view_lichsu_doxang.xml" value="0.14583333333333334" />
+        <entry key="..\:/STD/Mobile Develop/CK/MobileCK/app/src/main/res/layout/activity_view_lichsu_suachua.xml" value="0.14583333333333334" />
+        <entry key="..\:/STD/Mobile Develop/CK/MobileCK/app/src/main/res/layout/activity_view_lichsu_thaynhot.xml" value="0.14583333333333334" />
         <entry key="..\:/STD/Mobile Develop/CK/MobileCK/app/src/main/res/layout/emergency_row.xml" value="0.1598731884057971" />
+        <entry key="..\:/STD/Mobile Develop/CK/MobileCK/app/src/main/res/layout/fragment_doxang.xml" value="0.14583333333333334" />
         <entry key="..\:/STD/Mobile Develop/CK/MobileCK/app/src/main/res/layout/fragment_emergency.xml" value="0.264" />
         <entry key="..\:/STD/Mobile Develop/CK/MobileCK/app/src/main/res/layout/fragment_history.xml" value="0.14375" />
         <entry key="..\:/STD/Mobile Develop/CK/MobileCK/app/src/main/res/layout/fragment_home.xml" value="0.14375" />
         <entry key="..\:/STD/Mobile Develop/CK/MobileCK/app/src/main/res/layout/fragment_my_profile.xml" value="0.264" />
         <entry key="..\:/STD/Mobile Develop/CK/MobileCK/app/src/main/res/layout/fragment_sign_out.xml" value="0.15307971014492755" />
+        <entry key="..\:/STD/Mobile Develop/CK/MobileCK/app/src/main/res/layout/fragment_suachua.xml" value="0.14583333333333334" />
+        <entry key="..\:/STD/Mobile Develop/CK/MobileCK/app/src/main/res/layout/fragment_thaynhot.xml" value="0.14583333333333334" />
         <entry key="..\:/STD/Mobile Develop/CK/MobileCK/app/src/main/res/layout/layout_header_nav.xml" value="0.14375" />
+        <entry key="..\:/STD/Mobile Develop/CK/MobileCK/app/src/main/res/layout/lichsu_item.xml" value="0.14583333333333334" />
+        <entry key="..\:/STD/Mobile Develop/CK/MobileCK/app/src/main/res/layout/row_item.xml" value="0.14583333333333334" />
+        <entry key="..\:/STD/Mobile Develop/CK/MobileCK/app/src/main/res/menu/menu_bottom_view.xml" value="0.27447916666666666" />
         <entry key="..\:/STD/Mobile Develop/CK/MobileCK/app/src/main/res/menu/menu_nav.xml" value="0.264" />
+        <entry key="..\:/STD/Mobile Develop/CK/MobileCK/app/src/main/res/menu/option_menu.xml" value="0.27447916666666666" />
         <entry key="..\:/STD/Mobile Develop/CK/app/src/main/res/drawable-v24/bg_btn_del_edit.xml" value="0.26851851851851855" />
         <entry key="..\:/STD/Mobile Develop/CK/app/src/main/res/drawable-v24/ic_edit_black_24dp.xml" value="0.26851851851851855" />
         <entry key="..\:/STD/Mobile Develop/CK/app/src/main/res/layout/activity_main.xml" value="0.1793478260869565" />

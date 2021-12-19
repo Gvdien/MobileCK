@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:fitsSystemWindows="true"
-    tools:context=".Fragment.HistoryFragment">
+    tools:context=".Activity.ListLichsuActivity">
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabs"
