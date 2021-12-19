@@ -1,5 +1,6 @@
 package com.example.a51900035_51900087_51900593.Fragment;
 
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,8 +8,14 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.example.a51900035_51900087_51900593.R;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.material.textfield.TextInputEditText;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -16,6 +23,15 @@ import com.example.a51900035_51900087_51900593.R;
  * create an instance of this fragment.
  */
 public class MyProfileFragment extends Fragment {
+
+    String personName;
+    String personGivenName;
+    String personFamilyName;
+    String personEmail;
+    String personId;
+    Uri personPhoto;
+    TextInputEditText etFullname, etGivenname, etFamilyname, etEmail, etId;
+    ImageView img_avatar;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -61,6 +77,41 @@ public class MyProfileFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_my_profile, container, false);
+        View view = inflater.inflate(R.layout.fragment_my_profile, container, false);
+//        showUserInformation();
+//        inIt();
+        return view;
     }
+
+//    public void inIt(){
+//        etFullname = (TextInputEditText) getView().findViewById(R.id.etFullname);
+//        etGivenname = (TextInputEditText) getView().findViewById(R.id.etGivenname);
+//        etFamilyname = (TextInputEditText) getView().findViewById(R.id.etFamilyname);
+//        etEmail = (TextInputEditText) getView().findViewById(R.id.etEmail);
+//        etId = (TextInputEditText) getView().findViewById(R.id.etId);
+//        img_avatar = (ImageView) getView().findViewById(R.id.img_avatar);
+//    }
+
+//    public void showUserInformation(){
+//        GoogleSignInAccount acct = GoogleSignIn.getLastSignedInAccount(getContext());
+//        if (acct != null) {
+//            personName = acct.getDisplayName();
+//            personGivenName = acct.getGivenName();
+//            personFamilyName = acct.getFamilyName();
+//            personEmail = acct.getEmail();
+//            personId = acct.getId();
+//            personPhoto = acct.getPhotoUrl();
+//        }
+//
+////        etFullname.setText("Full name: "+personName);
+////        etGivenname.setText("Given name: "+personGivenName);
+////        etFamilyname.setText("Family name: "+etFamilyname);
+////        etEmail.setText("Email: "+etEmail);
+////        etId.setText("Id: "+etId);
+////        Glide.with(this).load(personPhoto).error(R.drawable.ic_avatart_default).into(img_avatar);
+//        else{
+//            Toast.makeText(getContext(), "Null", Toast.LENGTH_SHORT).show();
+//        }
+//
+//    }
 }

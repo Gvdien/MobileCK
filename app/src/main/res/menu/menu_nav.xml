@@ -7,6 +7,18 @@
             android:title="Manage"
             android:icon="@drawable/ic_baseline_home_24">
         </item>
+        <item
+            android:id="@+id/nav_nofications"
+            android:icon="@drawable/ic_edit_black_24dp"
+            android:title="@string/nav_nofications"></item>
+        <item
+            android:id="@+id/nav_history"
+            android:icon="@drawable/ic_baseline_history_24"
+            android:title="@string/nav_history"></item>
+        <item
+            android:id="@+id/nav_emergency"
+            android:icon="@drawable/ic_baseline_accessibility_24"
+            android:title="@string/nav_emergency"></item>
     </group>
 
     <item android:title="@string/nav_account">
@@ -14,18 +26,6 @@
             <item android:id="@+id/nav_my_profile"
                 android:title="@string/nav_profile"
                 android:icon="@drawable/ic_baseline_person_24">
-            </item>
-            <item android:id="@+id/nav_nofications"
-                android:title="@string/nav_nofications"
-                android:icon="@drawable/ic_edit_black_24dp">
-            </item>
-            <item android:id="@+id/nav_history"
-                android:title="@string/nav_history"
-                android:icon="@drawable/ic_baseline_history_24">
-            </item>
-            <item android:id="@+id/nav_emergency"
-                android:title="@string/nav_emergency"
-                android:icon="@drawable/ic_baseline_accessibility_24">
             </item>
             <item android:id="@+id/nav_sign_out"
                 android:title="@string/nav_sign_out"

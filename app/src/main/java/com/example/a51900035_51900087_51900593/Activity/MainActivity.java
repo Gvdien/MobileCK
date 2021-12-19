@@ -25,12 +25,18 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.example.a51900035_51900087_51900593.Fragment.EmergencyFragment;
 import com.example.a51900035_51900087_51900593.Fragment.HistoryFragment;
 import com.example.a51900035_51900087_51900593.Fragment.HomeFragment;
 import com.example.a51900035_51900087_51900593.Fragment.MyProfileFragment;
 import com.example.a51900035_51900087_51900593.Fragment.NoficationsFragment;
 import com.example.a51900035_51900087_51900593.R;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.navigation.NavigationView;
 
 
@@ -42,12 +48,20 @@ public class MainActivity extends AppCompatActivity implements  NavigationView.O
     private static final int FRAGMENT_HISTORY = 2;
     private static final int FRAGMENT_MY_PROFILE = 3;
     private static final int FRAGMENT_EMERGENCY = 4;
+    private static final int FRAGMENT_SIGNOUT = 5;
     public static  final  int MY_REQUEST_CODE = 10;
     private  int mCurrentFragment = FRAGMENT_HOME;
     private DrawerLayout mDrawerLayout;
     private NavigationView navigationView;
     private TextView tv_name,tv_email;
     private ImageView imgAvatar;
+    String personName;
+    String personGivenName;
+    String personFamilyName;
+    String personEmail;
+    String personId;
+    Uri personPhoto;
+    private GoogleSignInClient mGoogleSignInClient;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,7 +84,7 @@ public class MainActivity extends AppCompatActivity implements  NavigationView.O
         navigationView.setNavigationItemSelectedListener(this);
         replaceFragment(new HomeFragment());
         navigationView.getMenu().findItem(R.id.nav_home).setChecked(true);
-//        showUserInformation();
+        showUserInformation();
     }
 
 
@@ -83,7 +97,16 @@ public class MainActivity extends AppCompatActivity implements  NavigationView.O
                 mCurrentFragment = FRAGMENT_HOME;
             }
         }  else if (id ==R.id.nav_sign_out){
-
+            if(mCurrentFragment != FRAGMENT_SIGNOUT){
+                mGoogleSignInClient.signOut()
+                        .addOnCompleteListener(this, new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+                                Intent i = new Intent(MainActivity.this, LoginActivity.class);
+                                startActivity(i);
+                            }
+                        });
+            }
         } else if(id == R.id.nav_my_profile){
             if(mCurrentFragment != FRAGMENT_MY_PROFILE){
                 replaceFragment(new MyProfileFragment());
@@ -133,23 +156,23 @@ public class MainActivity extends AppCompatActivity implements  NavigationView.O
         }
     }
 
-//    public void showUserInformation(){
-//        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-//        if(user == null){
-//            return;
-//        }
-//        String name = user.getDisplayName();
-//        String email = user.getEmail();
-//        Uri photoUrl = user.getPhotoUrl();
-//        if(name == null){
-//            tv_name.setVisibility(View.GONE);
-//        } else {
-//            tv_name.setVisibility(View.VISIBLE);
-//            tv_name.setText(name);
-//            tv_email.setText(email);
-//            Glide.with(this).load(photoUrl).error(R.drawable.ic_avatart_default).into(imgAvatar);
-//        }
-//    }
+    public void showUserInformation(){
+        GoogleSignInAccount acct = GoogleSignIn.getLastSignedInAccount(this);
+        if (acct != null) {
+             personName = acct.getDisplayName();
+             personGivenName = acct.getGivenName();
+             personFamilyName = acct.getFamilyName();
+             personEmail = acct.getEmail();
+             personId = acct.getId();
+             personPhoto = acct.getPhotoUrl();
+        }
+
+            tv_name.setVisibility(View.VISIBLE);
+            tv_name.setText(personName);
+            tv_email.setText(personEmail);
+            Glide.with(this).load(personPhoto).error(R.drawable.ic_avatart_default).into(imgAvatar);
+
+    }
 
     private  void replaceFragment(Fragment fragment){
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();

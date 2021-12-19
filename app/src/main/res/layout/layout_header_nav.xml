@@ -7,14 +7,14 @@
     android:orientation="vertical"
     android:paddingBottom="20dp">
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/img_avatar"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:paddingLeft="20dp"
         android:src="@drawable/ic_avatart_default">
 
-    </ImageView>
+    </de.hdodenhof.circleimageview.CircleImageView>
 
     <TextView
         android:id="@+id/tv_name"
