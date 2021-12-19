@@ -14,6 +14,7 @@
         android:padding="10dp">
 
         <ImageView
+            android:layout_weight="1"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:src="@drawable/male"/>
@@ -29,7 +30,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
                 android:layout_weight="1"
-                android:text="Họ tên"
+                android:text="Nguyễn Văn A"
                 android:textColor="@color/black"
                 android:textStyle="bold"></TextView>
 
@@ -37,29 +38,22 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Giới tính"
+                android:text="Nam"
                 android:textStyle="bold">
 
             </TextView>
 
             <TextView
+                android:id="@+id/tvPhone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="MSSV"
+                android:text="111111111"
                 android:textStyle="bold" />
 
         </LinearLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="80dp"
-            android:layout_weight="1"
-            android:gravity="center_horizontal|center_vertical"
-            android:text="Lớp"
-            android:textColor="#020202"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -74,6 +68,7 @@
                 android:orientation="horizontal">
 
                 <ImageView
+                    android:id="@+id/ivCall"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -87,6 +82,7 @@
                 android:orientation="horizontal">
 
                 <ImageView
+                    android:id="@+id/ivMessage"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -103,10 +99,10 @@
         android:padding="10dp">
 
         <ImageView
-            android:id="@+id/ivImg1"
+            android:layout_weight="1"
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:src="@drawable/male"/>
+            android:src="@drawable/female"/>
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -115,45 +111,34 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/tvName1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
                 android:layout_weight="1"
-                android:text="Họ tên"
+                android:text="Nguyễn Thị B"
                 android:textColor="@color/black"
                 android:textStyle="bold"></TextView>
 
             <TextView
-                android:id="@+id/tvSex1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Giới tính"
+                android:text="Nữ"
                 android:textStyle="bold">
 
             </TextView>
 
             <TextView
-                android:id="@+id/tvCode1"
+                android:id="@+id/tvPhone1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="MSSV"
+                android:text="222222222"
                 android:textStyle="bold" />
 
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/tvGrade1"
-            android:layout_width="wrap_content"
-            android:layout_height="80dp"
-            android:layout_weight="1"
-            android:gravity="center_horizontal|center_vertical"
-            android:text="Lớp"
-            android:textColor="#020202"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -199,9 +184,10 @@
         android:padding="10dp">
 
         <ImageView
+            android:layout_weight="1"
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:src="@drawable/male"/>
+            android:src="@drawable/female"/>
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -214,7 +200,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
                 android:layout_weight="1"
-                android:text="Họ tên"
+                android:text="Trần Thị C"
                 android:textColor="@color/black"
                 android:textStyle="bold"></TextView>
 
@@ -222,29 +208,22 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Giới tính"
+                android:text="Nữ"
                 android:textStyle="bold">
 
             </TextView>
 
             <TextView
+                android:id="@+id/tvPhone2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="MSSV"
+                android:text="333333333"
                 android:textStyle="bold" />
 
         </LinearLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="80dp"
-            android:layout_weight="1"
-            android:gravity="center_horizontal|center_vertical"
-            android:text="Lớp"
-            android:textColor="#020202"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -259,6 +238,7 @@
                 android:orientation="horizontal">
 
                 <ImageView
+                    android:id="@+id/ivCall2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -272,6 +252,7 @@
                 android:orientation="horizontal">
 
                 <ImageView
+                    android:id="@+id/ivMessage2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -288,6 +269,7 @@
         android:padding="10dp">
 
         <ImageView
+            android:layout_weight="1"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:src="@drawable/male"/>
@@ -303,7 +285,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
                 android:layout_weight="1"
-                android:text="Họ tên"
+                android:text="Nguyễn Văn D"
                 android:textColor="@color/black"
                 android:textStyle="bold"></TextView>
 
@@ -311,29 +293,22 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Giới tính"
+                android:text="Nam"
                 android:textStyle="bold">
 
             </TextView>
 
             <TextView
+                android:id="@+id/tvPhone3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="MSSV"
+                android:text="444444444"
                 android:textStyle="bold" />
 
         </LinearLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="80dp"
-            android:layout_weight="1"
-            android:gravity="center_horizontal|center_vertical"
-            android:text="Lớp"
-            android:textColor="#020202"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -348,6 +323,7 @@
                 android:orientation="horizontal">
 
                 <ImageView
+                    android:id="@+id/ivCall3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -361,6 +337,7 @@
                 android:orientation="horizontal">
 
                 <ImageView
+                    android:id="@+id/ivMessage3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -369,6 +346,8 @@
         </LinearLayout>
 
     </LinearLayout>
+
+
 
 
 

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">51900087_DemoQT2</string>
+    <string name="app_name">DriverAssistant</string>
     <string name="nav_home">Home</string>
     <string name="nav_favorite">Product</string>
     <string name="nav_history">History</string>
