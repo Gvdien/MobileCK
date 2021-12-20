@@ -38,7 +38,7 @@ public class ViewLichsuThaynhotActivity extends AppCompatActivity {
     private void getData() {
         Bundle bundle = getIntent().getExtras();
         if(bundle == null){return;}
-        ls = (Lichsu)bundle.get("ob_lichsu");
+        ls = (Lichsu)bundle.get("object_lichsu");
         tvNoithuchien.setText(ls.getNoithuchien().toUpperCase());
         tvThoigian.setText(ls.getThoigian());
         tvChiphi.setText(Integer.toString(ls.getChiphi()));

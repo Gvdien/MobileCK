@@ -3,6 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Cuoiki/MobileCK/app/src/main/res/layout/activity_view_lichsu_doxang.xml" value="0.16666666666666666" />
+        <entry key="..\:/Cuoiki/MobileCK/app/src/main/res/layout/activity_view_lichsu_suachua.xml" value="0.17552083333333332" />
+        <entry key="..\:/Cuoiki/MobileCK/app/src/main/res/layout/activity_view_lichsu_thaynhot.xml" value="0.17552083333333332" />
+        <entry key="..\:/Cuoiki/MobileCK/app/src/main/res/layout/row_item.xml" value="0.10740740740740741" />
         <entry key="..\:/STD/Mobile Develop/CK/MobileCK/app/src/main/res/drawable/corner_bg.xml" value="0.25277777777777777" />
         <entry key="..\:/STD/Mobile Develop/CK/MobileCK/app/src/main/res/drawable/corner_bg_driver.xml" value="0.25277777777777777" />
         <entry key="..\:/STD/Mobile Develop/CK/MobileCK/app/src/main/res/layout/activity_add_doxang.xml" value="0.14583333333333334" />

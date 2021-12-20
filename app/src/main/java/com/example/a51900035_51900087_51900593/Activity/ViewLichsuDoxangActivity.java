@@ -9,7 +9,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.a51900035_51900087_51900593.Model.Lichsu;
 import com.example.a51900035_51900087_51900593.R;
@@ -17,6 +20,17 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.hssf.util.HSSFColor;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellStyle;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.Serializable;
 
 public class ViewLichsuDoxangActivity extends AppCompatActivity {
@@ -25,6 +39,7 @@ public class ViewLichsuDoxangActivity extends AppCompatActivity {
     DatabaseReference _myRef;
     TextView tvNoithuchien, tvThoigian, tvChiphi;
     Lichsu ls;
+    Button button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,12 +48,58 @@ public class ViewLichsuDoxangActivity extends AppCompatActivity {
 
         inItUI();
         getData();
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Workbook wb=new HSSFWorkbook();
+                Cell cell=null;
+                CellStyle cellStyle=wb.createCellStyle();
+                cellStyle.setFillForegroundColor(HSSFColor.LIGHT_BLUE.index);
+
+                Sheet sheet=null;
+                sheet = wb.createSheet("sheet1");
+
+                Row row =sheet.createRow(0);
+                cell=row.createCell(0);
+                cell.setCellValue(tvNoithuchien.getText().toString());
+                cell.setCellStyle(cellStyle);
+
+                cell=row.createCell(1);
+                cell.setCellValue(tvThoigian.getText().toString());
+                cell.setCellStyle(cellStyle);
+
+                cell=row.createCell(2);
+                cell.setCellValue(tvChiphi.getText().toString());
+                cell.setCellStyle(cellStyle);
+
+                sheet.setColumnWidth(0,(10*200));
+                sheet.setColumnWidth(1,(10*200));
+
+                File file = new File(getExternalFilesDir(null),"lichsu.xls");
+                FileOutputStream outputStream =null;
+
+                try {
+                    outputStream =new FileOutputStream(file);
+                    wb.write(outputStream);
+                    Toast.makeText(getApplicationContext(),"Xuất file thành công",Toast.LENGTH_LONG).show();
+                } catch (IOException e) {
+                    e.printStackTrace();
+
+                    Toast.makeText(getApplicationContext(),"Xuất file không thành công",Toast.LENGTH_LONG).show();
+                    try {
+                        outputStream.close();
+                    } catch (IOException ex) {
+                        ex.printStackTrace();
+                    }
+                }
+            }
+        });
     }
 
     private void getData() {
         Bundle bundle = getIntent().getExtras();
         if(bundle == null){return;}
-        ls = (Lichsu)bundle.get("ob_lichsu");
+        ls = (Lichsu)bundle.get("object_lichsu");
         tvNoithuchien.setText(ls.getNoithuchien().toUpperCase());
         tvThoigian.setText(ls.getThoigian());
         tvChiphi.setText(Integer.toString(ls.getChiphi()));
@@ -48,6 +109,7 @@ public class ViewLichsuDoxangActivity extends AppCompatActivity {
         tvNoithuchien = findViewById(R.id.tvNoithuchien);
         tvThoigian = findViewById(R.id.tvThoigian);
         tvChiphi = findViewById(R.id.tvChiphi);
+        button = findViewById(R.id.button);
     }
 
     @Override
