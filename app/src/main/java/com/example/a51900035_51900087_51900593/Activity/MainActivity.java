@@ -1,9 +1,5 @@
 package com.example.a51900035_51900087_51900593.Activity;
 
-import androidx.activity.result.ActivityResult;
-import androidx.activity.result.ActivityResultCallback;
-import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,21 +10,16 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.a51900035_51900087_51900593.Fragment.EmergencyFragment;
 import com.example.a51900035_51900087_51900593.Fragment.HistoryFragment;
-import com.example.a51900035_51900087_51900593.Fragment.HomeFragment;
 import com.example.a51900035_51900087_51900593.Fragment.MyProfileFragment;
 import com.example.a51900035_51900087_51900593.Fragment.NoficationsFragment;
 import com.example.a51900035_51900087_51900593.R;
@@ -38,9 +29,6 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.navigation.NavigationView;
-
-
-import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity implements  NavigationView.OnNavigationItemSelectedListener  {
     private static final int FRAGMENT_HOME = 0;
@@ -82,8 +70,8 @@ public class MainActivity extends AppCompatActivity implements  NavigationView.O
 
 
         navigationView.setNavigationItemSelectedListener(this);
-        replaceFragment(new HomeFragment());
-        navigationView.getMenu().findItem(R.id.nav_home).setChecked(true);
+        replaceFragment(new HistoryFragment());
+        navigationView.getMenu().findItem(R.id.nav_history).setChecked(true);
         showUserInformation();
     }
 
@@ -91,12 +79,13 @@ public class MainActivity extends AppCompatActivity implements  NavigationView.O
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
-        if(id == R.id.nav_home){
-            if(mCurrentFragment != FRAGMENT_HOME){
-                replaceFragment(new HomeFragment());
-                mCurrentFragment = FRAGMENT_HOME;
-            }
-        }  else if (id ==R.id.nav_sign_out){
+//        if(id == R.id.nav_home){
+//            if(mCurrentFragment != FRAGMENT_HOME){
+//                replaceFragment(new HistoryFragment());
+//                mCurrentFragment = FRAGMENT_HOME;
+//            }
+//        }
+         if (id ==R.id.nav_sign_out){
             if(mCurrentFragment != FRAGMENT_SIGNOUT){
                 mGoogleSignInClient.signOut()
                         .addOnCompleteListener(this, new OnCompleteListener<Void>() {

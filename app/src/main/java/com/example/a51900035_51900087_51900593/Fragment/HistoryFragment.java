@@ -8,8 +8,14 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 
-import com.example.a51900035_51900087_51900593.Activity.ListLichsuActivity;
+import com.example.a51900035_51900087_51900593.Activity.EmergencyActivity;
+import com.example.a51900035_51900087_51900593.Activity.ListLichsuDoxangActivity;
+import com.example.a51900035_51900087_51900593.Activity.ListLichsuSuachuaActivity;
+import com.example.a51900035_51900087_51900593.Activity.ListLichsuThaynhotActivity;
 import com.example.a51900035_51900087_51900593.R;
 
 /**
@@ -18,6 +24,7 @@ import com.example.a51900035_51900087_51900593.R;
  * create an instance of this fragment.
  */
 public class HistoryFragment extends Fragment {
+    Button doxang, suachua, thaynhot;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -64,8 +71,33 @@ public class HistoryFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_history, container, false);
-        Intent i = new Intent(getActivity(), ListLichsuActivity.class);
-        startActivity(i);
+        doxang = (Button) view.findViewById(R.id.doxang);
+        suachua = (Button) view.findViewById(R.id.suachua);
+        thaynhot = (Button) view.findViewById(R.id.thaynhot);
+
+        doxang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getActivity(), ListLichsuDoxangActivity.class);
+                startActivity(i);
+            }
+        });
+
+        suachua.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getActivity(), ListLichsuSuachuaActivity.class);
+                startActivity(i);
+            }
+        });
+
+        thaynhot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getActivity(), ListLichsuThaynhotActivity.class);
+                startActivity(i);
+            }
+        });
         return view;
     }
 }

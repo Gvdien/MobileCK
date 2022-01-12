@@ -13,19 +13,18 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.a51900035_51900087_51900593.Activity.ViewLichsuDoxangActivity;
-import com.example.a51900035_51900087_51900593.Model.Lichsu;
+import com.example.a51900035_51900087_51900593.Activity.ViewLichsuThaynhotActivity;
+import com.example.a51900035_51900087_51900593.Model.Thaynhot;
 import com.example.a51900035_51900087_51900593.R;
 
-import java.io.Serializable;
 import java.util.List;
 
-public class LichsuAdapter extends RecyclerView.Adapter<LichsuAdapter.ViewHolder>{
-    private List<Lichsu> lstLichsu;
+public class ThaynhotAdapter extends RecyclerView.Adapter<ThaynhotAdapter.ViewHolder>{
+    private List<Thaynhot> lstThaynhot;
     private Context mContext;
-    public LichsuAdapter(Context context, List<Lichsu> lstLichsu) {
+    public ThaynhotAdapter(Context context, List<Thaynhot> lstThaynhot) {
         this.mContext = context;
-        this.lstLichsu = lstLichsu;
+        this.lstThaynhot = lstThaynhot;
     }
     @NonNull
     @Override
@@ -37,12 +36,12 @@ public class LichsuAdapter extends RecyclerView.Adapter<LichsuAdapter.ViewHolder
     }
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        Lichsu ls = lstLichsu.get(position);
+        Thaynhot ls = lstThaynhot.get(position);
         if(ls==null)
             return;
         holder.img.setImageResource(ls.getPic());
         holder.tvNoithuchien.setText(ls.getNoithuchien().toUpperCase());
-        holder.tvChiphi.setText(Integer.toString(ls.getChiphi()));
+        holder.tvChiphi.setText(ls.getChiphi());
         holder.layout_item.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -50,17 +49,17 @@ public class LichsuAdapter extends RecyclerView.Adapter<LichsuAdapter.ViewHolder
             }
         });
     }
-    private void onClickDetail(Lichsu ls) {
-        Intent i = new Intent(mContext, ViewLichsuDoxangActivity.class);
+    private void onClickDetail(Thaynhot ls) {
+        Intent i = new Intent(mContext, ViewLichsuThaynhotActivity.class);
         Bundle bundle = new Bundle();
-        bundle.putSerializable("object_lichsu", (Serializable) ls);
+        bundle.putSerializable("object_thaynhot", ls);
         i.putExtras(bundle);
         mContext.startActivity(i);
     }
     @Override
     public int getItemCount() {
-        if(lstLichsu!=null)
-            return lstLichsu.size();
+        if(lstThaynhot !=null)
+            return lstThaynhot.size();
         return 0;
     }
     public class ViewHolder extends RecyclerView.ViewHolder {
@@ -79,3 +78,4 @@ public class LichsuAdapter extends RecyclerView.Adapter<LichsuAdapter.ViewHolder
         mContext=null;
     }
 }
+

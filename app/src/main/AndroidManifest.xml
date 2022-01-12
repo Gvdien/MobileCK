@@ -18,26 +18,35 @@
             android:name=".Activity.ListNhacnhoActivity"
             android:exported="false" />
         <activity
+            android:name=".Activity.ListLichsuSuachuaActivity"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name=".Activity.ListLichsuThaynhotActivity"
+            android:exported="true">
+        </activity>
+        <activity
             android:name=".Activity.ViewLichsuThaynhotActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".Activity.ViewLichsuSuachuaActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".Activity.ViewLichsuDoxangActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".Activity.AddSuachuaActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".Activity.AddThaynhotActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".Activity.AddDoxangActivity"
-            android:exported="true"></activity>
-        <activity
-            android:name=".Activity.ListLichsuActivity"
             android:exported="true" />
+        <activity
+            android:name=".Activity.ListLichsuDoxangActivity"
+            android:exported="true" >
+        </activity>
         <activity
             android:name=".Activity.LoginActivity"
             android:exported="true" />

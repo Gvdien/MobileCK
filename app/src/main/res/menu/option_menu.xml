@@ -1,15 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:title="Thêm lịch sử đổ xăng"
-        android:id="@+id/add_Doxang"
-        android:icon="@android:drawable/ic_input_add"
-        android:orderInCategory="0"/>
-    <item android:title="Thêm lịch sử thay nhớt"
-        android:id="@+id/add_Thaynhot"
-        android:icon="@android:drawable/ic_input_add"
-        android:orderInCategory="1"/>
-    <item android:title="Thêm lịch sử sửa chữa"
-        android:icon="@android:drawable/alert_dark_frame"
-        android:id="@+id/add_Suachua"
-        android:orderInCategory="2"/>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:title="Thêm lịch sử"
+        android:id="@+id/add"
+        app:showAsAction="always"
+        android:icon="@android:drawable/ic_input_add" />
 </menu>

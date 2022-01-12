@@ -1,14 +1,14 @@
 package com.example.a51900035_51900087_51900593.Activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.example.a51900035_51900087_51900593.Model.Lichsu;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.a51900035_51900087_51900593.Model.Suachua;
 import com.example.a51900035_51900087_51900593.R;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -16,9 +16,9 @@ import com.google.firebase.database.FirebaseDatabase;
 public class AddSuachuaActivity extends AppCompatActivity {
     FirebaseDatabase mDatabase = FirebaseDatabase.getInstance();
     DatabaseReference _myRef;
-    EditText edtNoithuchien, edtThoigian, edtChiphi;
+    EditText edtNoithuchien, edtThoigian, edtChiphi, edtLinhkien;
     Button btnSave;
-    Lichsu ls;
+    Suachua ls;
     boolean flag = false;
 
     @Override
@@ -38,16 +38,14 @@ public class AddSuachuaActivity extends AppCompatActivity {
         });
     }
 
-    private void setData(Lichsu ls) {
+    private void setData(Suachua ls) {
         if(ls == null){
-            ls = new Lichsu();
+            ls = new Suachua();
         }
-        String noithuchien = edtNoithuchien.getText().toString();
-        String thoigian = edtThoigian.getText().toString();
-        int chiphi = Integer.parseInt(String.valueOf(edtChiphi.getText()));
-        ls.setNoithuchien(noithuchien);
-        ls.setThoigian(thoigian);
-        ls.setChiphi(chiphi);
+        ls.setNoithuchien(edtNoithuchien.getText().toString());
+        ls.setThoigian(edtThoigian.getText().toString());
+        ls.setChiphi(edtChiphi.getText().toString());
+        ls.setLinhkien(edtLinhkien.getText().toString());
         ls.setPic(R.drawable.ic_baseline_history_24);
 
         _myRef = mDatabase.getReference("Suachua");
@@ -60,7 +58,7 @@ public class AddSuachuaActivity extends AppCompatActivity {
             _myRef.child(ls.getId()).setValue(ls);
             Intent i =new Intent(this, ViewLichsuSuachuaActivity.class);
             Bundle bundle = new Bundle();
-            bundle.putSerializable("ob_suachua", ls);
+            bundle.putSerializable("object_suachua", ls);
             i.putExtras(bundle);
             startActivity(i);
         }
@@ -70,15 +68,17 @@ public class AddSuachuaActivity extends AppCompatActivity {
         if(bundle==null) { return; //flag=false, add
         }
         flag=true ; //edit
-        ls = (Lichsu) bundle.get("ob_suachua");
+        ls = (Suachua) bundle.get("object_suachua");
         edtNoithuchien.setText(ls.getNoithuchien());
         edtThoigian.setText(ls.getThoigian());
         edtChiphi.setText(ls.getChiphi());
+        edtLinhkien.setText(ls.getLinhkien());
     }
     private void inIt() {
         edtNoithuchien = findViewById(R.id.edtNoithuchien);
         edtThoigian = findViewById(R.id.edtThoigian);
         edtChiphi = findViewById(R.id.edtChiphi);
+        edtLinhkien = findViewById(R.id.edtLinhkien);
     }
 
 }

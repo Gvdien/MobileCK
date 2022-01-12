@@ -1,8 +1,5 @@
 package com.example.a51900035_51900087_51900593.Activity;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -14,9 +11,11 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.a51900035_51900087_51900593.Model.Lichsu;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.a51900035_51900087_51900593.Model.Doxang;
 import com.example.a51900035_51900087_51900593.R;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -31,16 +30,14 @@ import org.apache.poi.ss.usermodel.Workbook;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.Serializable;
 
 public class ViewLichsuDoxangActivity extends AppCompatActivity {
 
     FirebaseDatabase mDatabase = FirebaseDatabase.getInstance();
     DatabaseReference _myRef;
     TextView tvNoithuchien, tvThoigian, tvChiphi;
-    Lichsu ls;
+    Doxang ls;
     Button button;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -94,49 +91,32 @@ public class ViewLichsuDoxangActivity extends AppCompatActivity {
                 }
             }
         });
-    }
 
-    private void getData() {
-        Bundle bundle = getIntent().getExtras();
-        if(bundle == null){return;}
-        ls = (Lichsu)bundle.get("object_lichsu");
-        tvNoithuchien.setText(ls.getNoithuchien().toUpperCase());
-        tvThoigian.setText(ls.getThoigian());
-        tvChiphi.setText(Integer.toString(ls.getChiphi()));
     }
-
-    private void inItUI() {
-        tvNoithuchien = findViewById(R.id.tvNoithuchien);
-        tvThoigian = findViewById(R.id.tvThoigian);
-        tvChiphi = findViewById(R.id.tvChiphi);
-        button = findViewById(R.id.button);
-    }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_bottom_view, menu);
+        getMenuInflater().inflate(R.menu.menu_bottom_add_edit, menu);
         return super.onCreateOptionsMenu(menu);
     }
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-
         switch (item.getItemId()){
-            case R.id.menu_bottom_edit:
+            case R.id.edit:
                 finish();
                 onClickUpdate(ls);
                 break;
-            case R.id.menu_bottom_delete:
+            case R.id.delete:
                 onClickDelete(ls);
                 break;
         }
         return super.onOptionsItemSelected(item);
     }
 
-    private void onClickDelete(Lichsu ls) {
+    private void onClickDelete(Doxang ls) {
         new AlertDialog.Builder(this)
-                .setTitle("Xóa lịch sử")
-                .setMessage("Bạn có chắc chắn muốn xóa lịch sử này không?")
+                .setTitle("Xoa")
+                .setMessage("Bạn có chắc chắn muốn xóa sản phẩm không?")
                 .setPositiveButton("Có", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
@@ -145,17 +125,32 @@ public class ViewLichsuDoxangActivity extends AppCompatActivity {
                         finish();
                     }
                 })
+
                 .setNegativeButton("Không", null)
                 .show();
     }
 
-    private void onClickUpdate(Lichsu ls) {
+    private void onClickUpdate(Doxang ls) {
         Intent i = new Intent(this, AddDoxangActivity.class);
         Bundle bundle = new Bundle();
-        bundle.putSerializable("ob_doxang", (Serializable) ls);
+        bundle.putSerializable("object_doxang", ls);
         i.putExtras(bundle);
         startActivity(i);
     }
 
+    private void getData() {
+        Bundle bundle = getIntent().getExtras();
+        if(bundle == null) return;
+        ls = (Doxang) bundle.get("object_doxang");
+        tvNoithuchien.setText(ls.getNoithuchien());
+        tvThoigian.setText(ls.getThoigian());
+        tvChiphi.setText(ls.getChiphi());
+        button = findViewById(R.id.button);
+    }
 
+    private void inItUI() {
+        tvNoithuchien = findViewById(R.id.tvNoithuchien);
+        tvThoigian = findViewById(R.id.tvThoigian);
+        tvChiphi = findViewById(R.id.tvChiphi);
+    }
 }

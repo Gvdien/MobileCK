@@ -9,7 +9,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.a51900035_51900087_51900593.Activity.ListLichsuActivity;
 import com.example.a51900035_51900087_51900593.Activity.ListNhacnhoActivity;
 import com.example.a51900035_51900087_51900593.R;
 

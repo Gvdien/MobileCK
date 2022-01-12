@@ -3,18 +3,20 @@
 
 
     <group android:checkableBehavior="single">
-        <item android:id="@+id/nav_home"
-            android:title="Manage"
-            android:icon="@drawable/ic_baseline_home_24">
-        </item>
-        <item
-            android:id="@+id/nav_nofications"
-            android:icon="@drawable/ic_edit_black_24dp"
-            android:title="@string/nav_nofications"></item>
+<!--        <item android:id="@+id/nav_home"-->
+<!--            android:title="Manage"-->
+<!--            android:icon="@drawable/ic_baseline_home_24">-->
+<!--        </item>-->
         <item
             android:id="@+id/nav_history"
             android:icon="@drawable/ic_baseline_history_24"
             android:title="@string/nav_history"></item>
+
+        <item
+            android:id="@+id/nav_nofications"
+            android:icon="@drawable/ic_edit_black_24dp"
+            android:title="@string/nav_nofications"></item>
+
         <item
             android:id="@+id/nav_emergency"
             android:icon="@drawable/ic_baseline_accessibility_24"

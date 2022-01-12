@@ -8,16 +8,75 @@
     android:fitsSystemWindows="true"
     tools:context=".Fragment.HistoryFragment">
 
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tabs"
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:tabGravity="fill"
-        app:tabMode="fixed">
-    </com.google.android.material.tabs.TabLayout>
-    <FrameLayout
-        android:id="@+id/frame_container"
+        android:layout_height="0dp"
+        android:layout_weight="5">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:src="@drawable/doxang"/>
+
+            <Button
+                android:id="@+id/doxang"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="Lịch sử đổ xăng"
+                android:backgroundTint="#1391A1"
+                android:layout_margin="5dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:src="@drawable/thaynhot"/>
+
+            <Button
+                android:id="@+id/thaynhot"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="Lịch sử thay nhớt"
+                android:backgroundTint="#1391A1"
+                android:layout_margin="5dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="0dp"
+        android:layout_weight="5"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:src="@drawable/suachua" />
+
+        <Button
+            android:id="@+id/suachua"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="Lịch sử sửa chữa và thay thế linh kiện"
+            android:backgroundTint="#1391A1"
+            android:layout_margin="5dp"/>
+
+    </LinearLayout>
 
 </LinearLayout>

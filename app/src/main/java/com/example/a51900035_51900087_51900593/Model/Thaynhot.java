@@ -4,15 +4,15 @@ import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Lichsu implements Serializable {
-
+public class Thaynhot implements Serializable {
     private String id;
     private String Noithuchien;
     private String Thoigian;
-    private int Chiphi;
+    private String Chiphi;
+    private String Loainhot;
     private int pic;
 
-    public Lichsu(){}
+    public Thaynhot(){}
 
     public String getId() {
         return id;
@@ -38,11 +38,11 @@ public class Lichsu implements Serializable {
         Thoigian = thoigian;
     }
 
-    public int getChiphi() {
+    public String getChiphi() {
         return Chiphi;
     }
 
-    public void setChiphi(int chiphi) {
+    public void setChiphi(String chiphi) {
         Chiphi = chiphi;
     }
 
@@ -54,13 +54,22 @@ public class Lichsu implements Serializable {
         this.pic = pic;
     }
 
+    public void setLoainhot(String loainhot) {
+        Loainhot = loainhot;
+    }
+
+    public String getLoainhot() {
+        return Loainhot;
+    }
+
     @Override
     public String toString() {
-        return "Lichsu{" +
+        return "LichsuThaynhot{" +
                 "id='" + id + '\'' +
                 ", Noithuchien='" + Noithuchien + '\'' +
                 ", Thoigian='" + Thoigian + '\'' +
-                ", Chiphi='" + Chiphi + '\'' +
+                ", Chiphi=" + Chiphi +
+                ", Loainhot='" + Loainhot + '\'' +
                 ", pic=" + pic +
                 '}';
     }
@@ -72,6 +81,7 @@ public class Lichsu implements Serializable {
         result.put("Thoigian", Thoigian);
         result.put("Chiphi", Chiphi);
         result.put("pic", pic);
+        result.put("Loainhot", Loainhot);
         return result;
     }
 }
