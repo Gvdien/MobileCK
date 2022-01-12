@@ -78,30 +78,25 @@ public class MyProfileFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_my_profile, container, false);
-//        showUserInformation();
-//        inIt();
+        GoogleSignInAccount acct = GoogleSignIn.getLastSignedInAccount(getContext());
+        personName = acct.getDisplayName();
+        personGivenName = acct.getGivenName();
+        personFamilyName = acct.getFamilyName();
+        personEmail = acct.getEmail();
+        personId = acct.getId();
+        personPhoto = acct.getPhotoUrl();
+        ((TextInputEditText) view.findViewById(R.id.etFullname)).setText("Full name: "+personName);
+        ((TextInputEditText) view.findViewById(R.id.etGivenname)).setText("Given name: "+personGivenName);
+        ((TextInputEditText) view.findViewById(R.id.etFamilyname)).setText("Family name: "+personFamilyName);
+        ((TextInputEditText) view.findViewById(R.id.etEmail)).setText("Email: "+personEmail);
+        ((TextInputEditText) view.findViewById(R.id.etId)).setText("Id: "+personId);
+        Glide.with(this).load(personPhoto).into(((ImageView) view.findViewById(R.id.img_avatar)));
         return view;
     }
 
-//    public void inIt(){
-//        etFullname = (TextInputEditText) getView().findViewById(R.id.etFullname);
-//        etGivenname = (TextInputEditText) getView().findViewById(R.id.etGivenname);
-//        etFamilyname = (TextInputEditText) getView().findViewById(R.id.etFamilyname);
-//        etEmail = (TextInputEditText) getView().findViewById(R.id.etEmail);
-//        etId = (TextInputEditText) getView().findViewById(R.id.etId);
-//        img_avatar = (ImageView) getView().findViewById(R.id.img_avatar);
-//    }
 
 //    public void showUserInformation(){
-//        GoogleSignInAccount acct = GoogleSignIn.getLastSignedInAccount(getContext());
-//        if (acct != null) {
-//            personName = acct.getDisplayName();
-//            personGivenName = acct.getGivenName();
-//            personFamilyName = acct.getFamilyName();
-//            personEmail = acct.getEmail();
-//            personId = acct.getId();
-//            personPhoto = acct.getPhotoUrl();
-//        }
+//
 //
 ////        etFullname.setText("Full name: "+personName);
 ////        etGivenname.setText("Given name: "+personGivenName);
